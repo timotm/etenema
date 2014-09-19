@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head lang="fi">
+    <meta charset="UTF-8">
+    <title>Etenemä v0.1</title>
+    <script src="js/config.js"></script>
+    <script data-main="main" src="js/lib/require-2.1.14.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Fira+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+  </head>
+  <body>
+    <div id="index" class="content">
+      <div id="header">
+	<h4>Etenemä v0.1 - ladataan, odota...</h4>
+      </div>
+      <div id="body">
+        <h4>Mikä?</h4>
+        <p class="small">
+          Sykemittarin ja gps:n kanssa tehdyille, Stravaan ladatuille juoksusuorituksille voidaan tällä palvelulla visualisoida <em>syke-etenemä</em>-indeksiä.</p>
+        <p class="small">Indeksin arvoja piirretään väliaikakohtaisesti (lap) seuraavalla kaavalla: <em>matka (m)  / ( aika (min) * ( keskisyke - leposyke ) )</em>
+          Indeksigraafin aikasarjasta voi nähdä kunnon kehittymisen ajan funktiona. Juoksuvauhti / indeksi -graafista puolestaan voi tehdä päätelmiä eri juoksunopeuksien tehokkuudesta.
+        </p>
+        <div id="login"></div>
+        <div id="input">
+          <label for="rest_hr">Leposyke</label>
+          <input class="three-digits" type="number" id="rest_hr" min="20" max="200" value="50"/>
+          <p></p>
+          <label for="slowest">Max. kilometritahti (min/km)</label>
+          <input class="four-digits right-margin" type="number" id="slowest" min="2.0" max="15" step="0.25" value="6.25"/>
+          <label for="hr_min">Käytä vain sykeväliä</label>
+          <input class="three-digits" type="number" id="hr_min" min="20" max="200" value="100"/> -
+          <input class="three-digits" type="number" id="hr_max" min="20" max="240" value="185"/>
+        </div>
+        <div class="plotcontainer">
+          <div id="historyplot" class="plot"></div>
+          <div class="plotlabel small">Etenemä pävittäin (päiviä sitten)</div>
+        </div>
+        <div class="plotcontainer">
+          <div id="pacevsindexplot" class="plot"></div>
+          <div class="plotlabel small">Etenemä kilometritahdin mukaan (min/km)</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
